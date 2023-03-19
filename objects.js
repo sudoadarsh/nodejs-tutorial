@@ -35,3 +35,100 @@ function a() {
 }
 
 a() // Will still output as undefined 'cause it's not defined inside a object.
+
+// 3. Arrays
+/**
+ * Arrays in Js can hold data of different types.
+ */ 
+const directory = ["leviosa", 'accio', 12];
+const directory1 = ['hogwarts'];
+
+// 3.1 [concate]: combine two arrays and returns a new array without modifying others.
+const file1 = directory1.concat(directory);
+console.log(file1);
+
+// 3.2 [copyWithin]: copies array elements to another position in the array.
+/**
+ * 1. It overrites the existing values.
+ * 2. Doesn't add items to the array.
+ */
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.copyWithin(
+    // The index to copy the elements to.
+    3,
+    // Start index
+    0,
+    // End index
+    1);
+
+// 3.3 [entries]: return an array interator object with key value pairs.
+const fEntries = fruits.entries();
+
+for (let fruit of fEntries) {
+    console.log(fruit);
+}
+
+// 3.4 [every]: executes a function for every element in the array.
+/**
+ * Returns false if all the elements doesn't satify the function.
+ * Returns true if all the elements satisfies the function.
+ */
+const temperatures = [42, 36, 44, 48];
+const isSummer = (temperature) => temperature >= 36;
+console.log(temperatures.every(isSummer));
+
+// 3.5 [fill]: replaces all the elements in a given array with the element specified.
+console.log(temperatures.fill(
+    // value to be filled
+    "filled",
+    // start index.
+    temperatures.length - 1
+    ));
+
+// 3.6 [filter]: returns a new array with the elements that satisfies a particular condition.
+const heatWave = temperatures.filter((value)=>value > 40);
+console.log(heatWave);
+
+// 3.7 [find]: retunrs the first element that satifies a particular condition. 
+/**
+ * [findIndex] is similar but it returns the index of the first element that satisfies a condition.
+ * It returns -1 if no index is found.
+ */
+console.log(temperatures.find((e)=> e > 40));
+
+// 3.7 [forEach]: calls a function for each element of an array. 
+// 3.6 [from]: creates a array from any object with a length property.
+const alphabets = Array.from('ABCDE');
+console.log(alphabets);
+
+// 3.7 [includes]: returns true if a certain element in found in the array. 
+// 3.8 [indexOf]: retunrs the index of the specified array element.
+// 3.9 [isArray]: checks if an object is an array or not. 
+// 3.10 [keys]: creates an array interator object with the keys of the arrray.
+// 3.11 [lastIndexOf]: returns in the last index of a repeating element in the array. 
+
+// 3.12 [reduce]: returns a single result, a function's accumulalated result. 
+const reduceThis = [1, 2, 3, 4, 5];
+const reduceFunction = (
+    // the accumulated result/ total.
+    total,
+    // the value.
+    val,
+    // the index [optional].
+    index,
+    // the array that the current element belongs to [optional]. 
+    arr,
+) => total + val;
+console.log(reduceThis.reduce(reduceFunction));
+
+// 3.13 [splice]: this method add and/or remove elements from an array.
+const spliceThis = [1, 2, 3, 4, 5];
+spliceThis.splice(
+    // Position to add/remove items. 
+    3,
+    // Item to remove.
+    1,
+    // New items to be added.
+    'new1', 'new2', 'new3'
+);
+console.log(spliceThis);
