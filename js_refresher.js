@@ -49,7 +49,7 @@ console.log(file1);
 
 // 3.2 [copyWithin]: copies array elements to another position in the array.
 /**
- * 1. It overrites the existing values.
+ * 1. It overwrites the existing values.
  * 2. Doesn't add items to the array.
  */
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -61,7 +61,7 @@ fruits.copyWithin(
     // End index
     1);
 
-// 3.3 [entries]: return an array interator object with key value pairs.
+// 3.3 [entries]: return an array iterator object with key value pairs.
 const fEntries = fruits.entries();
 
 for (let fruit of fEntries) {
@@ -70,7 +70,7 @@ for (let fruit of fEntries) {
 
 // 3.4 [every]: executes a function for every element in the array.
 /**
- * Returns false if all the elements doesn't satify the function.
+ * Returns false if all the elements doesn't satisfy the function.
  * Returns true if all the elements satisfies the function.
  */
 const temperatures = [42, 36, 44, 48];
@@ -89,7 +89,7 @@ console.log(temperatures.fill(
 const heatWave = temperatures.filter((value)=>value > 40);
 console.log(heatWave);
 
-// 3.7 [find]: retunrs the first element that satifies a particular condition. 
+// 3.7 [find]: returns the first element that satisfies a particular condition. 
 /**
  * [findIndex] is similar but it returns the index of the first element that satisfies a condition.
  * It returns -1 if no index is found.
@@ -102,12 +102,12 @@ const alphabets = Array.from('ABCDE');
 console.log(alphabets);
 
 // 3.7 [includes]: returns true if a certain element in found in the array. 
-// 3.8 [indexOf]: retunrs the index of the specified array element.
+// 3.8 [indexOf]: returns the index of the specified array element.
 // 3.9 [isArray]: checks if an object is an array or not. 
-// 3.10 [keys]: creates an array interator object with the keys of the arrray.
+// 3.10 [keys]: creates an array iterator object with the keys of the array.
 // 3.11 [lastIndexOf]: returns in the last index of a repeating element in the array. 
 
-// 3.12 [reduce]: returns a single result, a function's accumulalated result. 
+// 3.12 [reduce]: returns a single result, a function's accumulated result. 
 const reduceThis = [1, 2, 3, 4, 5];
 const reduceFunction = (
     // the accumulated result/ total.
@@ -144,7 +144,7 @@ console.log(constArray);
 
 // 5. Class in javascript. 
 /**
- * [constructor]: a special method used for creating and intialising objects inside a class. 
+ * [constructor]: a special method used for creating and initializing objects inside a class. 
  * Keywords used in class:
  * 1) static: Defines a static method for a class. 
  * 2) super: refers to the parent class. 
@@ -202,6 +202,6 @@ const isRoadSafe = ({weight}) => weight < 200;
 
 console.log(isRoadSafe(harley));
 
-// 7.2 Another method to destructure objects. 
+// 7.2 Another method to destructure objects. It can also be used for arrays. 
 const {weight} = harley;
 console.log(weight);
