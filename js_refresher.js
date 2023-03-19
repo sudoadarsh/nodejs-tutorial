@@ -182,3 +182,26 @@ class Ford extends Car {
 const mustang = new Ford('ford', 'mustang');
 mustang.drift();
 mustang.vroom();
+
+// 6. Rest operator in js. 
+const restEx = (...args) => {
+    return args;
+};
+
+console.log(restEx(1, 2, 3, 4, 5, 6));
+
+// 7. Object destructuring. 
+const harley = {
+    name: 'Harley',
+    weight: 250
+}
+
+// 7.1 This function only accepts the weight parameter from an object and drops
+// the others. 
+const isRoadSafe = ({weight}) => weight < 200;
+
+console.log(isRoadSafe(harley));
+
+// 7.2 Another method to destructure objects. 
+const {weight} = harley;
+console.log(weight);
