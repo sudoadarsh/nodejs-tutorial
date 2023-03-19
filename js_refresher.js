@@ -132,3 +132,53 @@ spliceThis.splice(
     'new1', 'new2', 'new3'
 );
 console.log(spliceThis);
+
+// 4. Arrays as reference types. 
+/**
+ * Arrays declared with const keyword can be still modified since the address of the 
+ * array remains constant.
+ */
+const constArray = [1, 2, 3, 4];
+constArray.push("new value added");
+console.log(constArray);
+
+// 5. Class in javascript. 
+/**
+ * [constructor]: a special method used for creating and intialising objects inside a class. 
+ * Keywords used in class:
+ * 1) static: Defines a static method for a class. 
+ * 2) super: refers to the parent class. 
+ * 3) extends: inherit another class. 
+ */
+
+class Car {
+    constructor(name) {
+        this.name = name;
+    }
+
+    revEngine() {
+        console.log("Rev engine of "+ this.name);
+    }
+
+    // Static method. 
+    vroom() {
+        console.log('vroom vroom');
+    }
+}
+
+class Ford extends Car {
+    constructor(name, model) {
+        // Call the constructor of the super class.
+        super(name);
+        this.model = model;
+    }
+
+    drift() {
+        console.log("drifting the hell out of "+ this.name + ' ' + this.model);
+    }
+}
+
+// 5.1 Creating an instance of the class. 
+const mustang = new Ford('ford', 'mustang');
+mustang.drift();
+mustang.vroom();
