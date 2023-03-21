@@ -1,0 +1,15 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "Basics of Nodejs development",
+  "main": "app-two.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app-two.js"
+  },
+  "author": "Adarsh Sudarsanan",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

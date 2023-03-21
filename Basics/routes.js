@@ -33,7 +33,7 @@ const routingHandler = (request, response) => {
       file.writeFile("message.txt", message, (err) => {
         // Send response.
         response.statusCode = 302; // Used for redirecting.
-        response.setHeader("Locatino", "/");
+        response.setHeader("Location", "/");
         return response.end();
       });
     });
