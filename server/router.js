@@ -18,8 +18,22 @@ const server = http.createServer((req, res) => {
   }
 
   if (url === "/message" && method === "POST") {
-    // Write to local file.
-    file.writeFileSync("message.text", "dummy_text");
+    // Get the data.
+    const body = [];
+    /**
+     * .on() method allows us to listen to certain events. */
+    req.on("data", (chunk) => {
+      body.push(chunk);
+    });
+
+    // Event for when node is done parsing the data.
+    req.on("end", (chunk) => {
+      // [.toString()] because we know that the data will be string.
+      const bodyParse = Buffer.concat(body).toString();
+      const message = bodyParse.split("=")[1];
+      // Write to local file.
+      file.writeFileSync("message.text", message);
+    });
     res.statusCode = 302; // Stands for redirectring.
     res.setHeader("Location", "/");
     return res.end();
