@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
     });
 
     // Event for when node is done parsing the data.
-    req.on("end", (chunk) => {
+    req.on("end", () => {
       // [.toString()] because we know that the data will be string.
       const bodyParse = Buffer.concat(body).toString();
       const message = bodyParse.split("=")[1];
@@ -38,11 +38,6 @@ const server = http.createServer((req, res) => {
     res.setHeader("Location", "/");
     return res.end();
   }
-
-  res.write("<html>");
-  res.write("<head><title>Nothing Page</title><head>");
-  res.write("<body><h1>Lost Pottah?!</h1></body>");
-  res.write("</html>");
 });
 
 server.listen(2000);
