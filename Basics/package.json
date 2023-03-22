@@ -5,7 +5,7 @@
   "main": "app-two.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app-two.js"
+    "start": "nodemon app-two.js"
   },
   "author": "Adarsh Sudarsanan",
   "license": "ISC",
