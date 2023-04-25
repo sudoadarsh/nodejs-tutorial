@@ -12,11 +12,19 @@ const http = require('http');
  * [ServerResponse] to send response.
  */
 
-const requestHandler = (req, res) => {
-    console.log(req.url, req.method, req.headers)
-    // process.exit() // To hard exit the server.
-}
-const server = http.createServer(requestHandler)
+const server = http.createServer((req, res) => {
+    console.log(req.url, req.method, req.headers);
+
+    // ServerResponse object can be used to set headers.
+    res.setHeader('Content-Type', 'text/html');
+    // Response can be send line by line.
+    res.write('<html>');
+    res.write('<head><title>NodeJS Tutorials</title></head>');
+    res.write('<body>NodeJS Writing responses</body>')
+    res.write('</html>');
+    // End the response.
+    res.end();
+})
 
 /**
  * Listen to server.
