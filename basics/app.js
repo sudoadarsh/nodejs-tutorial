@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
 
   if (req.url === "/welcome" && req.method === "POST") {
     const body = [];
-    // Listen to data events. 
+    // Listen to data events.
     req.on("data", (chunk) => {
       body.push(chunk);
     });
@@ -36,12 +36,12 @@ const server = http.createServer((req, res) => {
     return req.on("end", () => {
       const message = Buffer.concat(body).toString();
       console.log("PARSED BODY", message);
-      fs.writeFileSync("message.txt", message.split("=")[1]);
-
-      // Redirect the user.
-      res.statusCode = 302;
-      res.setHeader("Location", "/");
-      return res.end();
+      fs.writeFile("message.txt", message.split("=")[1], (error) => {
+        // Redirect the user.
+        res.statusCode = 302;
+        res.setHeader("Location", "/");
+        return res.end();
+      });
     });
   }
 
