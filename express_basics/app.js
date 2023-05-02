@@ -23,8 +23,8 @@ app.use(bodyParse.urlencoded({extended: false}));
  * 💡 2. Product page.
  * 💡 3. 404 error page.
  */
-app.use(adminRoutes);
-app.use(shopRoutes);
+app.use('/admin',adminRoutes);
+app.use('/shop',shopRoutes);
 
 app.use((request, response)=> {
     response.status(404).send("<html><head>404 Page not found</head></html>")
