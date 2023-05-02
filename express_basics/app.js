@@ -21,9 +21,14 @@ app.use(bodyParse.urlencoded({extended: false}));
 /**
  * 💡 1. Add Product page.
  * 💡 2. Product page.
+ * 💡 3. 404 error page.
  */
 app.use(adminRoutes);
 app.use(shopRoutes);
+
+app.use((request, response)=> {
+    response.status(404).send("<html><head>404 Page not found</head></html>")
+});
 
 /**
  * Create the server and listen to it. 
