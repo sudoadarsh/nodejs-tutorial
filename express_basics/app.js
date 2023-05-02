@@ -5,12 +5,14 @@
  * body-parser: For parsing form bodies received in requests.
  * admin.js: Part of routing files.
  * shop.js: Part of routing files.
+ * path: To get the absolute path.
  */
 const express = require('express');
 const app = express();
 const bodyParse = require('body-parser');
 const adminRoutes = require('./routes/admin.js');
 const shopRoutes = require('./routes/shop.js');
+const path = require('path');
 
 
 /**
@@ -27,7 +29,8 @@ app.use('/admin',adminRoutes);
 app.use('/shop',shopRoutes);
 
 app.use((request, response)=> {
-    response.status(404).send("<html><head>404 Page not found</head></html>")
+    // response.status(404).send("<html><head>404 Page not found</head></html>");
+    response.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 });
 
 /**
