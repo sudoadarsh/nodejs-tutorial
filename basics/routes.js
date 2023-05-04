@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const requestHandler = (req, res) => {
-    // Routing in Node.
+  // Routing in Node.
   if (req.url === "/") {
     res.setHeader("Content-Type", "text/html");
     res.write("<html>");
@@ -41,13 +41,13 @@ const requestHandler = (req, res) => {
   res.write("</html>");
   // End the response.
   res.end();
-}
+};
 
 /**
  *  Export the requestHandler.
  */
 // module.exports = requestHandler; // To export single object.
 module.exports = {
-    handler: requestHandler,
-    description: "This handles the routing."
-}
+  handler: requestHandler,
+  description: "This handles the routing.",
+};

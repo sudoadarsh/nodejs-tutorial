@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- Styling the Admin page. -->
+    <style>
+      .shop-header {
+        background-color: rgb(252, 199, 211);
+        border-radius: 10px;
+      }
+
+      .shop-header__nav {
+        display: flex;
+      }
+
+      .shop-header__ul {
+        list-style: none;
+        display: flex;
+      }
+
+      .shop-header__li a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: rgb(199, 140, 154);
+      }
+
+      .shop-header__li a:hover,
+      .shop-header__li a:active {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The header with navigation. -->
+    <header class="shop-header">
+      <nav class="shop-header__nav">
+        <ul class="shop-header__ul">
+          <li class="shop-header__li"><a href="/shop/home">Shop</a></li>
+          <li class="shop-header__li">
+            <a href="/admin/addProduct">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- The main section. -->
+    <main>
+      <h1>My Products</h1>
+      <p>The list of all Products.</p>
+    </main>
+  </body>
+</html>
