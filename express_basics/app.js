@@ -20,6 +20,13 @@ const path = require('path');
  * A request handler passed to it will be execute for every incoming request.
  */
 app.use(bodyParse.urlencoded({extended: false}));
+
+/**
+ * Passing files statically.
+ * Enable the user to access the public folder containing the styling.
+ */
+app.use(express.static(path.join(__dirname, "public")))
+
 /**
  * 💡 1. Add Product page.
  * 💡 2. Product page.
