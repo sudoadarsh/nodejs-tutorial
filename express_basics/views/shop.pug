@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/shop.css")
+    body
+        header.shop-header
+            nav.shop-header__nav 
+                ul.shop-header__ul
+                    li.shop-header__li 
+                        a.active(href="/shop/home") Shop
+                    li.shop-header__li 
+                        a.active(href="/admin/addProduct") Add Product
+        main
+            h1 MyProducts
+            p The list of all products.

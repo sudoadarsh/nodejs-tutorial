@@ -9,11 +9,18 @@
  */
 const express = require('express');
 const app = express();
-const bodyParse = require('body-parser');
-const adminRoutes = require('./routes/admin.js');
-const shopRoutes = require('./routes/shop.js');
-const path = require('path');
 
+/**
+ * Using app.set() to set value globally in the node js.
+ * The value can be then retrived using app.get().
+ */
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
+const bodyParse = require('body-parser'); 
+const adminData = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+const path = require('path');
 
 /**
  * Adding a new middleware function.
@@ -32,7 +39,7 @@ app.use(express.static(path.join(__dirname, "public")))
  * 💡 2. Product page.
  * 💡 3. 404 error page.
  */
-app.use('/admin',adminRoutes);
+app.use('/admin',adminData.router);
 app.use('/shop',shopRoutes);
 
 app.use((request, response)=> {
