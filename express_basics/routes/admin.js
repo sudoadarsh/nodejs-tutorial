@@ -13,7 +13,10 @@ const products = [];
 
 router.get('/addProduct', (request, response) => {
     // response.send('<form action="/admin/product" method="POST"><input type="text" name="title"></input><button type="submit">Submit</button></form>');
-    response.sendFile(path.join(rootDir, 'views', 'add-product.html'));
+    // response.sendFile(path.join(rootDir, 'views', 'add-product.html'));
+    response.render('add-product', {
+        title: "Add New Product"
+    })
 });
 
 router.post('/product', (request, response) => {

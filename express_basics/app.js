@@ -14,7 +14,7 @@ const app = express();
  * Using app.set() to set value globally in the node js.
  * The value can be then retrived using app.get().
  */
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs'); // Set the global templating engine to ejs.
 app.set('views', 'views');
 
 const bodyParse = require('body-parser'); 
@@ -44,7 +44,11 @@ app.use('/shop',shopRoutes);
 
 app.use((request, response)=> {
     // response.status(404).send("<html><head>404 Page not found</head></html>");
-    response.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+    // response.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+    response.render(
+        '404', // Name of the View. 
+        {title: "Oops! Page not found"} // Data to be passed on.
+    );
 });
 
 /**

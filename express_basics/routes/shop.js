@@ -12,7 +12,7 @@ router.use('/home', (request, response) => {
     // response.send("<html><head>Hello from Nodejs</head></html>");
     // response.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
     response.render('shop', {
-        docTitle: "Levi's",
+        title: "All Products",
         prods: products
     });
 });
