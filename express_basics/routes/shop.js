@@ -5,7 +5,7 @@ const adminData = require('./admin');
 /**
  * path: Helps us to get the absolute path of the project directory.
  */
-const path = require('path')
+// const path = require('path')
 
 router.use('/home', (request, response) => {
     const products = adminData.products;
@@ -14,7 +14,7 @@ router.use('/home', (request, response) => {
     response.render('shop', {
         docTitle: "Levi's",
         prods: products
-    }); // To send dynamic content. 
+    });
 });
 
 module.exports= router;
