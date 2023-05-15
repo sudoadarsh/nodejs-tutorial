@@ -1,0 +1,26 @@
+<%- include('includes/head.ejs') %>
+    <!-- The header with navigation. -->
+    <header class="main-header">
+        <nav class="main-header__nav">
+        <ul class="main-header__ul">
+            <li class="main-header__li">All Students</li>
+            <li class="main-header__li">Add Students</li>
+        </ul>
+        </nav>
+    </header>
+
+    <!-- The main sections with the form. -->
+    <main>
+        <form class="student-form" method="POST">
+        <div class="student-form__control">
+            <div>
+                <label for="title">Add Students</label>
+                </div>
+                <div>
+                <input type="text" name="title" id="title" />
+                </div>
+                <button class="btn" type="submit">ADD</button>
+        </div>
+        </form>
+    </main>
+<%- include('includes/end.ejs') %>
