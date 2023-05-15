@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Students</title>
+    <link rel="stylesheet" href="/css/form.css">
+  </head>
+  <body>
+    <!-- The header with navigation. -->
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__ul">
+          <li class="main-header__li">All Students</li>
+          <li class="main-header__li">Add Students</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- The main sections with the form. -->
+    <main>
+      <form class="student-form" method="POST">
+        <div class="student-form__control">
+            <div>
+                <label for="title">Add Students</label>
+              </div>
+              <div>
+                <input type="text" name="title" id="title" />
+              </div>
+              <button class="btn" type="submit">ADD</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
