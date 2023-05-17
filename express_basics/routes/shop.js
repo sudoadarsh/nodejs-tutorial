@@ -1,20 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const adminData = require('./admin');
+// const adminData = require('./admin');
+
+const controller = require('../controllers/products');
 
 /**
  * path: Helps us to get the absolute path of the project directory.
  */
 // const path = require('path')
 
-router.use('/home', (request, response) => {
-    const products = adminData.products;
-    // response.send("<html><head>Hello from Nodejs</head></html>");
-    // response.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
-    response.render('shop', {
-        title: "All Products",
-        prods: products
-    });
-});
+router.use('/home', controller.getHome);
 
 module.exports= router;

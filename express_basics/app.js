@@ -22,6 +22,8 @@ const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const path = require('path');
 
+const controller = require('./controllers/error');
+
 /**
  * Adding a new middleware function.
  * A request handler passed to it will be execute for every incoming request.
@@ -42,14 +44,7 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use('/admin',adminData.router);
 app.use('/shop',shopRoutes);
 
-app.use((request, response)=> {
-    // response.status(404).send("<html><head>404 Page not found</head></html>");
-    // response.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
-    response.render(
-        '404', // Name of the View. 
-        {title: "Oops! Page not found"} // Data to be passed on.
-    );
-});
+app.use(controller.error);
 
 /**
  * Create the server and listen to it. 
