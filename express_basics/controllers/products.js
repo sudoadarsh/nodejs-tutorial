@@ -1,4 +1,4 @@
-const products = [];
+const Product = require('../models/product'); // Import the products model.
 
 exports.getAddProduct = (request, response ) => {
     response.render('add-product', {
@@ -7,15 +7,19 @@ exports.getAddProduct = (request, response ) => {
 }
 
 exports.postProduct = (request, response) => {
-    products.push({
+    /* products.push({
         title: request.body.title
-    });
+    }); */
+    const product = Product(request.body.title);
+    product.save();
+
     response.redirect('/shop/home');
 }
 
 exports.getHome = (request, response) => {
     // response.send("<html><head>Hello from Nodejs</head></html>");
     // response.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+    const products = Product.fetchProducts();
     response.render('shop', {
         title: "All Products",
         prods: products
