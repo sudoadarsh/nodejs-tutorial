@@ -1,10 +1,14 @@
 /**
- * The page contains all the avialble endpoints.
+ * The page contains all the available endpoints.
  */
-const admin = 'admin';
 const home = '/';
+const homeAllProducts = '/allProducts';
+const admin = '/admin';
+const adminAddProduct = '/addProduct';
 
 module.exports = {
     "admin": admin,
-    "home": home
+    "home": home,
+    "adminAddProduct": adminAddProduct,
+    "homeAllProducts": homeAllProducts
 }
