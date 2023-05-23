@@ -1,7 +1,7 @@
  // const http = require('http');
 /**
  * Imports.
- * expresss: For middlewares.
+ * express: For middleware.
  * body-parser: For parsing form bodies received in requests.
  * admin.js: Part of routing files.
  * shop.js: Part of routing files.
@@ -51,4 +51,4 @@ app.use(controller.error);
  */
 // const server = http.createServer(app);
 // server.listen(2000);
-app.listen(3000)
+app.listen(2000)
