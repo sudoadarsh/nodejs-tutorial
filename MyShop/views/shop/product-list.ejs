@@ -5,22 +5,30 @@
 
     <!-- The main section. -->
     <main>
-      <div class="grid">
-        <article class="card_item">
-          <header class="card_header">
-            <h1 class="product_title">Averi's Treasure</h1>
-          </header>
-          <div class="product_image">
-            <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Flandscape-natural-lmage-130994953.jpg&tbnid=WkDC901E0PcEBM&vet=12ahUKEwiRnrrd9eT-AhXIHbcAHVleDJkQMygBegUIARDZAQ..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Flmage.html&docid=SZmC_MOxMuA7NM&w=800&h=653&q=lmages&ved=2ahUKEwiRnrrd9eT-AhXIHbcAHVleDJkQMygBegUIARDZAQ" alt="Averi's Treasure">
+      <% if (products.length > 0) { %>
+        <% for (let product of products) { %>
+          <div class="grid">
+            <article class="card_item">
+              <header class="card_header">
+                <h1 class="product_title"><%= product.title %></h1>
+              </header>
+              <div class="product_image">
+                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Flandscape-natural-lmage-130994953.jpg&tbnid=WkDC901E0PcEBM&vet=12ahUKEwiRnrrd9eT-AhXIHbcAHVleDJkQMygBegUIARDZAQ..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Flmage.html&docid=SZmC_MOxMuA7NM&w=800&h=653&q=lmages&ved=2ahUKEwiRnrrd9eT-AhXIHbcAHVleDJkQMygBegUIARDZAQ" alt="Averi's Treasure">
+              </div>
+              <div class="card_content">
+                <h2 class="product_price">$19.99</h2>
+                <h2 class="product_description">An adventure book</h2>
+              </div>
+              <div class="card_actions">
+                <button class="btn">Add to Cart</button>
+              </div>
+            </article>
           </div>
-          <div class="card_content">
-            <h2 class="product_price">$19.99</h2>
-            <h2 class="product_description">An adventure book</h2>
-          </div>
-          <div class="card_actions">
-            <button class="btn">Add to Cart</button>
-          </div>
-        </article>
-      </div>
+        <% } %>
+      <% } else { %>
+        <div>
+          <h1>Not products found...</h1>
+        </div>
+      <% } %>
     </main>
 <%- include("../includes/end.ejs") %>
